@@ -1,0 +1,117 @@
+.card {
+    font-family: "Montserrat";
+    margin: 0 auto;
+    max-width: 60rem !important;
+    color: white;
+    background-color: #18181b !important;
+    padding-bottom: 20px;
+    border-radius: 25px !important;
+   }
+   .contents {
+    display: flex;
+    justify-content: space-evenly;
+   }
+   .ele {
+    background-color: #404040 !important;
+    margin: 0 !important;
+    padding: 1rem 4.5rem;
+   }
+   .condition {
+    margin-bottom: 20px;
+   }
+   .date {
+    font-size: 20px;
+    margin-top: 10px;
+   }
+   .temp {
+    color: yellow !important;
+   }
+   .padding {
+    padding-left: 50px;
+   }
+   body {
+    font-family: "Montserrat";
+    text-align: center;
+   }
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+    font-family: "Montserrat-Bold";
+   }
+   p {
+    color: #8f8f8f;
+   }
+   /* Headings */
+   .big-heading {
+    font-family: "Montserrat-Black";
+    font-size: 3.5rem;
+    line-height: 1.5;
+   }
+   .section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+   }
+   /* Containers */
+   .navbar {
+    padding: 0 0 4.5rem;
+   }
+   .navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+   }
+   .nav-item {
+    padding: 0 18px;
+   }
+   .nav-item:hover{
+    color: white;
+   }
+   .nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat-Light";
+   }
+   .textbox {
+    border-radius: 25px;
+    color: white;
+    background-color: #27272a;
+    border: 2px solid white;
+    padding: 20px;
+    width: 20rem;
+    height: 3rem;
+   }
+   .big-heading {
+    font-family: "Montserrat-Black";
+    font-size: 3.5rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+   }
+   .colored-section {
+    background-color: #27272a;
+    color: #fff;
+   }
+   .center {
+    text-align: center;
+   }
+   @media (max-width: 780px) {
+    .contents {
+    display: grid;
+    gap: 7px;
+    justify-content: space-evenly;
+    }
+   }
+   .social-icon {
+    margin: 20px 10px;
+   }
+   .icon {
+    color: #ef8172;
+    margin-bottom: 1rem;
+   }
+   .icon:hover {
+    color: #ff4c68;
+   }
+   #footer {
+    text-align: center;
+   }

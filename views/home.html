@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/Styles/index1.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+  <section class="colored-section" id="title">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="home.html">WeatherBug&#176</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" datatarget="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Air-pollution</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Subscription</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index3.ejs">Forecast</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="big-heading">Get to know Weather from Wherever</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features -->
+  <section class="colored-section" id="features">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-check-circle fa-4x"></i>
+          <h3 class="feature-title">Easy to use.</h3>
+          <p>So easy to use, Weather is just one-click away</p>
+        </div>
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-bullseye fa-4x"></i>
+          <h3 class="feature-title">Perfection</h3>
+          <p>Always accurate</p>
+        </div>
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-heart fa-4x"></i>
+          <h3 class="feature-title">Guaranteed to work.</h3>
+          <p>Customer satisfaction is our top pirority</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Major City -->
+  <section class="colored-section car" id="maj-city">
+    <div class="slider">
+      <div class="slide active">
+        <h2 class="maj-city-text">Bangalore</h2>
+        <img src="/images/cloud.png" alt="" class="maj-city-image" />
+        <em>Temperature&#176C</em>
+      </div>
+      <div class="slide active">
+        <h2 class="maj-city-text">Dehli</h2>
+        <img src="/images/cloud.png" alt="" class="maj-city-image" />
+        <em>Temperature&#176C</em>
+      </div>
+      <div class="slide active ">
+        <h2 class="maj-city-text">Mumbai</h2>
+        <img src="/images/cloud.png" alt="" class="maj-city-image" />
+        <em>Temperature&#176C</em>
+      </div>
+      <div class="slide active ">
+        <h2 class="maj-city-text">Dehradun</h2>
+        <img src="/images/cloud.png" alt="" class="maj-city-image" />
+        <em>Temperature&#176C</em>
+      </div>
+      <button class="btn btn-next">></button>
+      <button class="btn btn-prev"><</button>
+    </div>
+  </section>
+  <!-- Press -->
+  <section class="colored-section" id="press">
+    <img class="press-logo" src="/images/company-1.png" alt="company" />
+  </section>
+  <!-- Pricing -->
+  <section class="colored-section" id="p">
+    <h2 class="section-heading">A Plan to be Always one step Ahead</h2>
+    <p>Simple and affordable price plans for you.</p>
+  </section>
+  <!-- card -->
+  <section class="card-section" id="pricing">
+    <div class="row">
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Trial</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">Free</h2>
+            <p>50 weather-calls Per Day</p>
+            <p>Unlimited App Usage</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Regular</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">$49 / mo</h2>
+            <p>100 weather-calls per day</p>
+            <p>Unlimited App Usage</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Premium</h3>
+          </div>
+          <div class="card-body"">
+              <h2 class=" price-text">$99 / mo</h2>
+            <p>Unlimited weather-calls</p>
+            <p>Unlimited App Usage</p>
+            <button class="btn btn-lg btn-block btn-dark" type="button">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forecast -->
+  <section class="colored-section" id="forecast">
+    <div class="container-fluid">
+      <h3 class="big-heading">Find Weather of any City</h3>
+      <form action="home.html" method="post" >
+      <input type="text" class="textbox inputVal" style="height: 30px; margin-top: 20px;">
+      <br />
+      <button class="download-button btn btn-lg btn-outline-light btn-hover Search-button" type="button"
+        style="margin-left: 50px;">
+        <i class="">Search</i> 
+      </button>
+    </form>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="colored-section" id="footer">
+    <div class="container-fluid">
+      <i class="social-icon fab fa-facebook-f icon icon-hover"></i>
+      <i class="social-icon fab fa-twitter icon icon-hover"></i>
+      <i class="social-icon fab fa-instagram icon icon-hover"></i>
+      <i class="social-icon fas fa-envelope icon icon-hover"></i>
+      <p>© Copyright Bhavya Anand</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach((slide, indx) => {
+      slide.style.transform = `translateX(${indx * 100}%)`;
+    });
+    let curSlide = 0;
+    const nextSlide = document.querySelector(".btn-next");
+    nextSlide.addEventListener("click", function () {
+      curSlide++;
+      slides.forEach((slide, indx) => {
+        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+      });
+    });
+    const prevSlide = document.querySelector(".btn-prev");
+    prevSlide.addEventListener("click", function () {
+      if (curSlide === 0) {
+        curSlide = maxSlide;
+      }
+      else {
+        curSlide--;
+      }
+      slides.forEach((slide, indx) => {
+        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+      });
+    });
+    const button = document.querySelector('.Search-button');
+    button.addEventListener('click', () => {
+      $(window.location)[0].replace("http://localhost:5556/index3.html");
+    }); 
+    </script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+</body>
+</html>

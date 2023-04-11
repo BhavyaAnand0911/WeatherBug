@@ -9,8 +9,7 @@ const fetch = require('node-fetch');
 
 app.get('/index3', (req, res) => {
   const city = req.query.city;
-  const apiKey = 'a298ffc6780395b462954bb9a478d046'; // replace with your actual API key
-  // build the API URL with the city and API key
+  const apiKey = 'a298ffc6780395b462954bb9a478d046'; 
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
   fetch(apiUrl)
@@ -18,10 +17,8 @@ app.get('/index3', (req, res) => {
     .then(data => {
       const temperature = data.main.temp;
       const windSpeed = data.wind.speed;
-      const aqi = data.main.aqi;
-      const weatherData = {temp: temperature, windSpeed: windSpeed, aqi: aqi};
-
-      // return the weather data as JSON
+      const humidity = data.main.humidity;
+      const weatherData = {temp: temperature, windSpeed: windSpeed, humidity: humidity}; 
       res.json(weatherData);
     })
     .catch(error => {
@@ -30,18 +27,15 @@ app.get('/index3', (req, res) => {
     });
 });
 
-
 //LOGIN APP
 //Login using mongoDB
 
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
-// Use cookie parser middleware
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Use JSON middleware for parsing request body
 app.use(express.json());
 
 // Connect to MongoDB
@@ -53,12 +47,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/WeatherBug', {
 .catch(err => console.error(err));
 
 // Define user schema
+
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true }
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema); //creating a collection
 
 // Serve login page
 app.get('/', (req, res) => {
@@ -66,6 +61,7 @@ app.get('/', (req, res) => {
 });
 
 // Login route
+
 app.post('/', async (req, res) => {
   const { email, password } = req.body;
 
@@ -73,14 +69,13 @@ app.post('/', async (req, res) => {
   const user = await User.findOne({ email });
 
   if (!user) {
-    // User not found
     res.status(401).send('Invalid email or password');
-  } else {
+  } 
+  else {
     if (user.password !== password) {
-      // Password incorrect
       res.status(401).send('Invalid email or password');
-    } else {
-      // Set user ID cookie and redirect to dashboard
+    } 
+    else {
       res.cookie('user_id', user._id.toString(), { maxAge: 3600000 }); // Cookie expires after 1 hour
       res.redirect('/home.html');
     }
@@ -99,7 +94,8 @@ app.post('/signup.html', async (req, res) => {
   try {
     await user.save();
     res.redirect(302, '/');
-  } catch (err) {
+  } 
+  catch (err) {
     console.error(err);
     res.status(500).send('Error signing up user');
   }
@@ -108,8 +104,9 @@ app.post('/signup.html', async (req, res) => {
 app.get('/home.html', (req, res) => {
   if (req.cookies.user_id) {
     res.sendFile(__dirname + '/views/home.html');
-  } else {
-    res.status(401).send('<h1>Unauthorized User</h1>');
+  } 
+  else {
+    res.status(401).send('<h1>LOGGED OUT</h1>');
   }
 });
 

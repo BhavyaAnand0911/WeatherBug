@@ -96,7 +96,8 @@
         <em>Temperature&#176C</em>
       </div>
       <button class="btn btn-next">></button>
-      <button class="btn btn-prev"><</button>
+      <button class="btn btn-prev">
+        < </button>
     </div>
   </section>
   <!-- Press -->
@@ -163,14 +164,14 @@
   <section class="colored-section" id="forecast">
     <div class="container-fluid">
       <h3 class="big-heading">Find Weather of any City</h3>
-      <form action="home.html" method="post" >
-      <input type="text" class="textbox inputVal" style="height: 30px; margin-top: 20px;">
-      <br />
-      <button class="download-button btn btn-lg btn-outline-light btn-hover Search-button" type="button"
-        style="margin-left: 50px;">
-        <i class="">Search</i> 
-      </button>
-    </form>
+      <form action="home.html" method="post">
+        <input type="text" class="textbox inputVal" style="height: 30px; margin-top: 20px;">
+        <br />
+        <button class="download-button btn btn-lg btn-outline-light btn-hover Search-button" type="button"
+          style="margin-left: 50px;">
+          <i class="">Search</i>
+        </button>
+      </form>
     </div>
   </section>
   <!-- Footer -->
@@ -191,9 +192,15 @@
       slide.style.transform = `translateX(${indx * 100}%)`;
     });
     let curSlide = 0;
+    const maxSlide = slides.length - 1; // Define maxSlide
     const nextSlide = document.querySelector(".btn-next");
     nextSlide.addEventListener("click", function () {
-      curSlide++;
+      if (curSlide === maxSlide) {
+        curSlide = 0;
+      }
+      else {
+        curSlide++;
+      }
       slides.forEach((slide, indx) => {
         slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
       });
@@ -210,11 +217,9 @@
         slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
       });
     });
-    const button = document.querySelector('.Search-button');
-    button.addEventListener('click', () => {
-      $(window.location)[0].replace("http://localhost:5556/index3.html");
-    }); 
-    </script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+  </script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -44,15 +44,14 @@
         </div>
     </nav>
     <br>
-    <div class="card">
+    <div class="card weather-card">
         <div class="date">
-            <div class="padding">Friday</div>
-            <div class="padding">7th April 2023</div>
+            <div class="padding">Tuesday</div>
+            <div class="padding">11th April 2023</div>
         </div>
-
-        <div class="display-3 padding city">Vellore</div>
-        <div class="display-1 temp padding">27&#176</div>
-        <div class="condition padding">17:55 &nbsp;&nbsp;&nbsp;Mostly Clear</div>
+        <div class="display-3 padding city"></div>
+        <div class="display-1 temp padding">&#176</div>
+        <div class="condition padding">15:14 &nbsp;&nbsp;&nbsp;Mostly Clear</div>
         <div class="contents">
             <div class="card ele">
                 Sunset <br>
@@ -60,11 +59,11 @@
             </div>
             <div class="card ele">
                 Wind Speed<br>
-                <div class="display-6 windSpeed">11km/h</div>
+                <div class="display-6 windSpeed"> km/h</div>
             </div>
             <div class="card ele">
-                AQI<br>
-                <div class="display-6 aqi">41</div>
+                Humidity<br>
+                <div class="display-6 aqi"></div>
             </div>
         </div>
 
@@ -73,7 +72,7 @@
     <section class="colored-section center" id="cta">
         <div class="container-fluid">
             <h3 class="big-heading">Find Weather of any City</h3>
-            <form action="/index3" method="get">
+            <form action="index3" method="get">
                 <input type="text" class="textbox" name="city">
                 <br>
                 <br>
@@ -103,24 +102,45 @@
 
             if (city) {
                 fetch(`/index3?city=${city}`)
-                    .then( response => response.json())
-                    .then( data => {
-                        if (!data || !data.temp || !data.windSpeed || !data.aqi) {
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data || !data.temp || !data.windSpeed || !data.humidity) {
                             throw new Error('Invalid response from server');
                         }
 
                         const temperature = data.temp;
                         const windSpeed = data.windSpeed;
-                        const aqi = data.aqi;
+                        const humidity = data.humidity;
 
-                        card.innerHTML = `Temperature: ${temperature}&deg;C<br>Wind Speed: ${windSpeed} m/s<br>AQI: ${aqi || 'N/A'}`;
+                        card.innerHTML = `<div class="date">
+                                        <div class="padding">Tuesday</div>
+                                        <div class="padding">11th April 2023</div>
+                                    </div>
+                                    <div class="display-3 padding city">${city}</div>
+                                    <div class="display-1 temp padding">${temperature}&#176</div>
+                                    <div class="condition padding">15:14 &nbsp;&nbsp;&nbsp;Mostly Clear</div>
+                                    <div class="contents">
+                                    <div class="card ele">
+                                        Sunset <br>
+                                    <div class="display-6">18:25pm</div>
+                                    </div>
+                                    <div class="card ele">
+                                        Wind Speed<br>
+                                    <div class="display-6 windSpeed">${windSpeed}km/h</div>
+                                    </div>
+                                    <div class="card ele">
+                                    Humidity<br>
+                                    <div class="display-6 aqi">${humidity}</div>
+                                    </div>
+                                    </div>`;
                     })
                     .catch(error => {
                         console.error(error);
                         card.innerHTML = 'Error retrieving weather data';
                     });
-                }
-            });
+            }
+        });
+
     </script>
 </body>
 

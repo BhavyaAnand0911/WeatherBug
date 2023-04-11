@@ -39,6 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Connect to MongoDB
+
 mongoose.connect('mongodb://127.0.0.1:27017/WeatherBug', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -73,7 +74,7 @@ app.post('/', async (req, res) => {
   } 
   else {
     if (user.password !== password) {
-      res.status(401).send('Invalid email or password');
+      res.status(401).send('Invalid password');
     } 
     else {
       res.cookie('user_id', user._id.toString(), { maxAge: 3600000 }); // Cookie expires after 1 hour
@@ -122,7 +123,6 @@ app.get("/index3.ejs",(req,res)=>{
 app.use(express.static('public'));
 app.use('./Styles',express.static(__dirname+'/public/Styles'));
 app.use('./Scripts',express.static(__dirname+'/public/Scripts'));
-
 
 app.listen(PORT,()=>{
   console.log('Listening');
